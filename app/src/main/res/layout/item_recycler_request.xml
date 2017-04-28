@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:elevation="@dimen/card_elevation"
+        app:cardCornerRadius="@dimen/card_corner_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/item_request_tv_name"
+                style="@style/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+
+                android:text="John" />
+
+            <TextView
+                android:id="@+id/item_request_tv_address"
+                style="@style/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_request_tv_name"
+                android:drawableStart="@drawable/ic_location_icon_small"
+                android:maxHeight="@dimen/text_view_max_height"
+                android:maxWidth="168dp"
+                android:text="1097, St. Peters Street,CA" />
+
+            <TextView
+                android:id="@+id/item_request_tv_show_on"
+                style="@style/RoundedLeftTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_request_tv_name"
+                android:layout_toRightOf="@+id/item_request_tv_address"
+                android:maxHeight="32dp"
+                android:padding="@dimen/padding_small"
+                android:text="@string/show_on_map" />
+
+            <TextView
+                android:id="@+id/item_request_tv_duration"
+                style="@style/TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_request_tv_address"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/ic_time_icon_small"
+                android:maxHeight="@dimen/text_view_max_height"
+                android:maxWidth="168dp"
+                android:text="6d 2h left" />
+
+            <TextView
+                android:id="@+id/item_request_tv_review"
+                style="@style/TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_request_tv_duration"
+                android:layout_marginBottom="@dimen/margin_top_large"
+                android:layout_marginLeft="@dimen/margin_left_large"
+                android:layout_marginRight="@dimen/margin_left_large"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/ic_review_icon_small"
+                android:maxHeight="@dimen/text_view_max_height"
+                android:text="Lorem is just a dummy text used to print the review" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/circular_image_side"
+        android:layout_height="@dimen/circular_image_side"
+        android:layout_centerHorizontal="true"
+        android:elevation="@dimen/elevation"
+        android:src="@drawable/shape_pill_secondary"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="@dimen/circular_image_border_width" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-16dp"
+        android:elevation="@dimen/elevation">
+
+        <TextView
+            android:id="@+id/item_request_tv_accept"
+            style="@style/RoundedTextViewPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/accept" />
+
+        <TextView
+            android:id="@+id/item_request_tv_reject"
+            style="@style/RoundedTextViewSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/reject" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

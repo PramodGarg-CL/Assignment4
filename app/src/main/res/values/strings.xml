@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Assignment4</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="show_on_map">Show On Map</string>
+    <string name="dummy_data_discover">Explore Paris</string>
+    <string name="dummy_data_discover_paris">Paris</string>
+    <string name="dummy_data_name">John</string>
+    <string name="dummy_data_time">6d 2h left</string>
+    <string name="dummy_data_review">222 Reviews</string>
+    <string name="dummy_data_text">Lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur lorem ipsum.</string>
+    <string name="send_request">Send Request</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_map">Map</string>
+    <string name="title_my_posts">My Posts</string>
+    <string name="title_requests">Requests</string>
+    <string name="title_my_network">My Network</string>
+</resources>

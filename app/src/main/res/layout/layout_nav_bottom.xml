@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/BottomNavigationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/discover_icon"
+        android:text="@string/title_discover" />
+
+    <TextView
+        style="@style/BottomNavigationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/map"
+        android:text="@string/title_map"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        style="@style/BottomNavigationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/my_post"
+        android:text="@string/title_my_posts"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        style="@style/BottomNavigationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/request"
+        android:text="@string/title_requests"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        style="@style/BottomNavigationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/my_network"
+        android:text="@string/title_my_network"
+        android:textColor="@android:color/white" />
+
+
+</LinearLayout>
