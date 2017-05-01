@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
+    android:layout_marginBottom="@dimen/margin_top_medium"
+    android:background="@color/background_light"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
@@ -18,32 +19,55 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/item_request_tv_name"
-                style="@style/TextView"
+            <LinearLayout
+                android:id="@+id/linear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="48dp"
+                android:orientation="horizontal">
 
-                android:text="John" />
+                <TextView
+                    android:id="@+id/item_request_tv_name"
+                    style="@style/TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/dummy_data_name" />
+
+
+                <android.support.v7.widget.AppCompatRatingBar
+                    android:id="@+id/item_request_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_left_very_small"
+                    android:isIndicator="true"
+                    android:numStars="6"
+                    android:stepSize="0.5" />
+
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/item_request_tv_address"
                 style="@style/TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/item_request_tv_name"
-                android:drawableStart="@drawable/ic_location_icon_small"
+                android:layout_below="@+id/linear"
+                android:drawableStart="@drawable/location_icon_small"
                 android:maxHeight="@dimen/text_view_max_height"
                 android:maxWidth="168dp"
-                android:text="1097, St. Peters Street,CA" />
+                android:text="@string/dummy_data_address" />
 
             <TextView
                 android:id="@+id/item_request_tv_show_on"
                 style="@style/RoundedLeftTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/item_request_tv_name"
+                android:layout_below="@+id/linear"
                 android:layout_toRightOf="@+id/item_request_tv_address"
                 android:maxHeight="32dp"
                 android:padding="@dimen/padding_small"
@@ -55,11 +79,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/item_request_tv_address"
-                android:drawablePadding="4dp"
-                android:drawableStart="@drawable/ic_time_icon_small"
+                android:drawableStart="@drawable/time_1"
                 android:maxHeight="@dimen/text_view_max_height"
                 android:maxWidth="168dp"
-                android:text="6d 2h left" />
+                android:text="@string/dummy_data_duration" />
 
             <TextView
                 android:id="@+id/item_request_tv_review"
@@ -70,10 +93,9 @@
                 android:layout_marginBottom="@dimen/margin_top_large"
                 android:layout_marginLeft="@dimen/margin_left_large"
                 android:layout_marginRight="@dimen/margin_left_large"
-                android:drawablePadding="4dp"
-                android:drawableStart="@drawable/ic_review_icon_small"
+                android:drawableStart="@drawable/reviewa_icon_small"
                 android:maxHeight="@dimen/text_view_max_height"
-                android:text="Lorem is just a dummy text used to print the review" />
+                android:text="@string/dummy_data_text" />
 
 
         </RelativeLayout>
@@ -81,12 +103,12 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/profile_image"
+        android:id="@+id/item_request_iv"
         android:layout_width="@dimen/circular_image_side"
         android:layout_height="@dimen/circular_image_side"
         android:layout_centerHorizontal="true"
         android:elevation="@dimen/elevation"
-        android:src="@drawable/shape_pill_secondary"
+        android:src="@drawable/placeholder_user"
         app:civ_border_color="@color/colorPrimary"
         app:civ_border_width="@dimen/circular_image_border_width" />
 

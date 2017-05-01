@@ -3,8 +3,12 @@
     <color name="colorPrimary">#58bdb8</color>
     <color name="colorPrimaryDark">#58bdb8</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="background">#f3f3f3</color>
+    <color name="background_light">#f3f3f3</color>
+    <color name="background_dark">#333c40</color>
     <color name="colorReject">#d0011b</color>
     <color name="colorTextPrimary">#202020</color>
     <color name="colorItemSelected">#4caea9</color>
+
+    <!-- Background for selector for TextView in BottomNavigation-->
+        <drawable name="semitransparent_white">@color/colorItemSelected</drawable>
 </resources>

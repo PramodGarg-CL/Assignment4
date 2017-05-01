@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_light"
+    android:backgroundTint="@color/colorPrimary"
+    android:orientation="vertical">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav_iv"
+        android:layout_width="@dimen/circular_image_side_large"
+        android:layout_height="@dimen/circular_image_side_large"
+        android:layout_centerHorizontal="true"
+        android:elevation="@dimen/elevation"
+        android:src="@drawable/paris"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="@dimen/zero_dimen" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_xtra_large"
+        android:background="@color/background_light">
+
+        <TextView
+            android:id="@+id/nav_tv_name"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_xtra_large"
+            android:text="@string/dummy_data_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_large" />
+
+        <TextView
+            android:id="@+id/nav_tv_city"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nav_tv_name"
+            android:text="@string/dummy_data_city_name" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/nav_tv_city"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/edit_icon" />
+    </RelativeLayout>
+
+</RelativeLayout>

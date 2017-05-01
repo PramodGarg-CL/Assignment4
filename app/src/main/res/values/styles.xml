@@ -8,23 +8,50 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Toolbar ImageButton-->
+    <style name="ToolbarImageButton">
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!-- SearchView ImageButton-->
+    <style name="SearchView">
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
 
     <!-- TextView-->
     <style name="TextView">
         <item name="android:textSize">@dimen/text_size_normal</item>
         <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_marginTop">@dimen/margin_top_small</item>
         <item name="android:layout_centerHorizontal">true</item>
     </style>
 
-    <!-- Rounded TextViews-->
-    <style name="RoundedTextViewPrimary" parent="@style/TextView">
-        <item name="android:background">@drawable/shape_pill_primary</item>
-        <item name="android:layout_marginTop">0dp</item>
-        <item name="android:padding">@dimen/padding_small</item>
+    <!-- Toolbar Textview-->
+    <style name="ToolbarTextView" parent="@style/TextView">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:gravity">center</item>
+
+    </style>
+
+
+    <!-- Rounded TextViews--><style name="RoundedTextViewPrimary" parent="@style/TextView">
+    <item name="android:background">@drawable/shape_pill_primary</item>
+    <item name="android:layout_marginTop">0dp</item>
+    <item name="android:padding">@dimen/padding_small</item>
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:gravity">center</item>
+</style>
+
+    <style name="RoundedTextViewDark" parent="@style/RoundedTextViewPrimary">
+        <item name="android:background">@drawable/shape_pill_dark</item>
     </style>
 
     <style name="RoundedTextViewSecondary" parent="@style/RoundedTextViewPrimary">
@@ -41,13 +68,17 @@
 
     <style name="RoundedCornerTextView" parent="@style/RoundedTextViewPrimary">
         <item name="android:background">@drawable/shape_pill_rounded_corner</item>
-    </style>
-    <!-- Bottom Navigation TextViews-->
+    </style><!-- Bottom Navigation TextViews-->
     <style name="BottomNavigationTextView">
 
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingTop">@dimen/padding_small</item>
+        <item name="android:paddingBottom">@dimen/padding_small</item>
+        <item name="android:background">@drawable/selector_background</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
+
 
 </resources>
