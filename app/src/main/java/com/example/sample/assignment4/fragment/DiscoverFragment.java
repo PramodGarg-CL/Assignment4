@@ -2,16 +2,19 @@ package com.example.sample.assignment4.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.sample.assignment4.AppConstants;
 import com.example.sample.assignment4.R;
+import com.example.sample.assignment4.activity.NavigationActivity;
 import com.example.sample.assignment4.adapter.DiscoverRecyclerAdapter;
 import com.example.sample.assignment4.model.Discover;
 
@@ -22,9 +25,12 @@ import java.util.List;
  * Created by darknight on 28/4/17.
  */
 
-public class DiscoverFragment extends BaseFragment {
+public class DiscoverFragment extends BaseFragment implements NavigationActivity.OnRecyclerLayoutChange {
     private RecyclerView mRecyclerView;
+    private ImageButton mImageButtonChangeLayout;
     private int mode;
+    private boolean isGridView = false;
+    private DiscoverRecyclerAdapter mDiscoverRecyclerAdapter;
 
     @Nullable
     @Override
@@ -44,8 +50,11 @@ public class DiscoverFragment extends BaseFragment {
         mode = getArguments().getInt("mode");
         Log.d("DiscoverFragment", "init: " + mode);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
+        mImageButtonChangeLayout = (ImageButton) view.findViewById(R.id.toolbar_ib_grid);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(new DiscoverRecyclerAdapter(getData(), mode));
+        mDiscoverRecyclerAdapter = new DiscoverRecyclerAdapter(getData(), mode);
+        mRecyclerView.setAdapter(mDiscoverRecyclerAdapter);
+        mRecyclerView.requestFocus();
     }
 
     /**
@@ -100,6 +109,19 @@ public class DiscoverFragment extends BaseFragment {
         discoverFragment.setArguments(bundle);
         return discoverFragment;
 
+    }
+
+
+    @Override
+    public void onRecyclerLayoutChange(final boolean isGridViewEnabled) {
+        if (isGridViewEnabled) {
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+        } else {
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        }
+        mDiscoverRecyclerAdapter.setGridView(isGridViewEnabled);
+        mDiscoverRecyclerAdapter.notifyDataSetChanged();
     }
 }
 

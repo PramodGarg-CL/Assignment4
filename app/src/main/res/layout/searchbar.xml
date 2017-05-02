@@ -11,13 +11,14 @@
 
     <EditText
         android:layout_width="0dp"
+        android:id="@+id/search_bar_et"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:background="@drawable/rounded_border"
         android:drawablePadding="@dimen/padding_medium"
         android:drawableStart="@drawable/icon_search"
-        android:hint="@string/searchbar_hint"
+        android:hint="@string/search_bar_hint_discover"
         android:paddingBottom="@dimen/padding_small"
         android:paddingLeft="@dimen/padding_medium"
         android:paddingTop="@dimen/padding_small"

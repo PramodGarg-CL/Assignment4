@@ -8,8 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.sample.assignment4.AppConstants;
 import com.example.sample.assignment4.R;
@@ -21,6 +22,8 @@ import com.example.sample.assignment4.R;
 public class ViewpagerFragment extends BaseFragment implements View.OnClickListener {
     private TextView mTextViewToolbarTitle;
     private ViewPager mViewPager;
+    private LinearLayout mLayoutSearchBar;
+    private EditText mEditTextSearch;
 
     @Nullable
     @Override
@@ -39,6 +42,8 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
     private void init(final View view) {
         mTextViewToolbarTitle = (TextView) view.findViewById(R.id.toolbar_tv_title);
         mViewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
+        mLayoutSearchBar = (LinearLayout) view.findViewById(R.id.home_viewpager_searchbar);
+        mEditTextSearch = (EditText) view.findViewById(R.id.search_bar_et);
         mViewPager.setOffscreenPageLimit(5);
         mViewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
@@ -76,6 +81,44 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
         textViewReq.setOnClickListener(this);
         textViewNets.setOnClickListener(this);
 
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(final int position) {
+                switch (position) {
+                    case 0:
+                        mLayoutSearchBar.setVisibility(View.VISIBLE);
+                        mEditTextSearch.setHint(getString(R.string.search_bar_hint_discover));
+                        break;
+                    case 1:
+                        mLayoutSearchBar.setVisibility(View.VISIBLE);
+                        mEditTextSearch.setHint(getString(R.string.search_bar_hint_map));
+                        break;
+                    case 2:
+                        mLayoutSearchBar.setVisibility(View.VISIBLE);
+                        mEditTextSearch.setHint(getString(R.string.search_bar_hint_posts));
+                        break;
+                    case 3:
+                        mLayoutSearchBar.setVisibility(View.GONE);
+                        break;
+                    case 4:
+                        mLayoutSearchBar.setVisibility(View.GONE);
+                        break;
+                    default:
+                        mLayoutSearchBar.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(final int state) {
+
+            }
+        });
+
     }
 
     /**
@@ -93,7 +136,6 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.btm_nav_discover:
-                Toast.makeText(getActivity(), "hhe", Toast.LENGTH_SHORT).show();
                 position = 0;
                 break;
             case R.id.btm_nav_map:
@@ -124,5 +166,14 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
 
     private void changeFragment(final int position) {
         mViewPager.setCurrentItem(position);
+    }
+
+    /**
+     * Return the reference of viewpager
+     *
+     * @return mViewPager
+     */
+    public ViewPager getViewPager() {
+        return mViewPager;
     }
 }

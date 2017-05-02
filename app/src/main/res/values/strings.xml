@@ -18,7 +18,11 @@
     <string name="title_posts">Posts</string>
     <string name="title_requests">Requests</string>
     <string name="title_my_network">My Network</string>
-    <string name="searchbar_hint">Where would you like to connect?</string>
+
+    <string name="search_bar_hint_discover">Where would you like to connect?</string>
+    <string name="search_bar_hint_map">Location</string>
+    <string name="search_bar_hint_posts">Search</string>
+
     <string name="connect">Connect</string>
 
     <string name="menu_home">Home</string>

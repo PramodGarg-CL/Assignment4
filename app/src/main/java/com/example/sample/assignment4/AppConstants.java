@@ -7,6 +7,7 @@ package com.example.sample.assignment4;
 public final class AppConstants {
     public static final int MODE_ADAPTER_DISCOVER = 1;
     public static final int MODE_ADAPTER_MY_POSTS = 2;
+    public static final String TAG_VIEWPAGER = "viewpager";
 
     /**
      * private constructor

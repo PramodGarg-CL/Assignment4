@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/grid_side_length"
+    android:layout_width="match_parent"
     android:layout_height="@dimen/grid_side_length"
     android:background="@android:color/background_light"
     android:orientation="vertical"
@@ -28,6 +28,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/item_discover_tv_city"
             style="@style/TextView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

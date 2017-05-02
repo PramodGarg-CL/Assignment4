@@ -20,8 +20,10 @@ import java.util.List;
 
 public class DiscoverRecyclerAdapter extends RecyclerView.Adapter<DiscoverRecyclerAdapter.DiscoverRecyclerVH> {
 
+    private boolean isGridView = false;
     private List<Discover> mDiscoverList;
     private int mode;
+
 
     /**
      * set the list of data
@@ -35,15 +37,49 @@ public class DiscoverRecyclerAdapter extends RecyclerView.Adapter<DiscoverRecycl
         this.mode = mode;
     }
 
+    /**
+     * Setter isGridView
+     *
+     * @param gridView : isGridView
+     */
+    public void setGridView(final boolean gridView) {
+        isGridView = gridView;
+    }
+
     @Override
     public DiscoverRecyclerVH onCreateViewHolder(final ViewGroup parent, final int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_discover, parent, false);
+        View view;
+        if (viewType == 0) {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_recycler_discover_grid, parent, false);
+        } else if (viewType == 1 || viewType == 2) {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_recycler_discover, parent, false);
+        } else {
+            return null;
+        }
+       /* if (mode == AppConstants.MODE_ADAPTER_DISCOVER && isGridView) {
+
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_recycler_discover_grid, parent, false);
+
+        } else {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_recycler_discover, parent, false);
+        }
+*/
         return new DiscoverRecyclerVH(view);
     }
 
     @Override
     public void onBindViewHolder(final DiscoverRecyclerVH holder, final int position) {
         Discover current = mDiscoverList.get(position);
+
+      /*  if (mode == AppConstants.MODE_ADAPTER_DISCOVER && isGridView) {
+
+        }
+
+
         holder.textViewReview.setText(current.getmReviews());
         holder.textViewText.setText(current.getmText());
         holder.textViewDuration.setText(current.getmDuration());
@@ -71,13 +107,26 @@ public class DiscoverRecyclerAdapter extends RecyclerView.Adapter<DiscoverRecycl
             holder.imageButtonAdd.setVisibility(View.INVISIBLE);
             holder.textViewSendRequest.setVisibility(View.INVISIBLE);
         }
-
+*/
 
     }
 
     @Override
     public int getItemCount() {
         return mDiscoverList.size();
+    }
+
+    @Override
+    public int getItemViewType(final int position) {
+        if (mode == AppConstants.MODE_ADAPTER_DISCOVER && isGridView) {
+            return 0;
+        } else if (mode == AppConstants.MODE_ADAPTER_DISCOVER && !isGridView) {
+            return 1;
+        } else if (mode == AppConstants.MODE_ADAPTER_MY_POSTS) {
+            return 2;
+        } else {
+            return -1;
+        }
     }
 
     /**
@@ -96,7 +145,7 @@ public class DiscoverRecyclerAdapter extends RecyclerView.Adapter<DiscoverRecycl
          */
         public DiscoverRecyclerVH(final View itemView) {
             super(itemView);
-            textViewCityName = (TextView) itemView.findViewById(R.id.item_discover_tv_city);
+           /* textViewCityName = (TextView) itemView.findViewById(R.id.item_discover_tv_city);
             textViewDuration = (TextView) itemView.findViewById(R.id.item_discover_tv_duration);
             textViewExplore = (TextView) itemView.findViewById(R.id.item_discover_tv_expl);
             textViewReview = (TextView) itemView.findViewById(R.id.item_discover_tv_review);
@@ -106,7 +155,7 @@ public class DiscoverRecyclerAdapter extends RecyclerView.Adapter<DiscoverRecycl
             ratingBar = (RatingBar) itemView.findViewById(R.id.item_discover_rating);
             imageButtonDel = (ImageButton) itemView.findViewById(R.id.item_discover_ib_del);
             imageButtonEdit = (ImageButton) itemView.findViewById(R.id.item_discover_ib_edit);
-            imageButtonAdd = (ImageButton) itemView.findViewById(R.id.item_discover_ib_add);
+            imageButtonAdd = (ImageButton) itemView.findViewById(R.id.item_discover_ib_add);*/
         }
     }
 }
