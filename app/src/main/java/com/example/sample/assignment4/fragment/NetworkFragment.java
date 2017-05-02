@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.example.sample.assignment4.R;
 import com.example.sample.assignment4.adapter.NetworkRecyclerAdapter;
 import com.example.sample.assignment4.model.Network;
+import com.example.sample.assignment4.utils.SimpleDividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class NetworkFragment extends BaseFragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container,
                              @Nullable final Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_discover, container, false);
+        View view = inflater.inflate(R.layout.fragment_network, container, false);
         init(view);
         return view;
     }
@@ -69,5 +70,6 @@ public class NetworkFragment extends BaseFragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(new NetworkRecyclerAdapter(getData()));
+        mRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(getContext()));
     }
 }
