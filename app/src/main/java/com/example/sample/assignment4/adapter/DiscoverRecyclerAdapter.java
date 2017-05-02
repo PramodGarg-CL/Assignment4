@@ -58,16 +58,6 @@ public class DiscoverRecyclerAdapter extends RecyclerView.Adapter<DiscoverRecycl
         } else {
             return null;
         }
-       /* if (mode == AppConstants.MODE_ADAPTER_DISCOVER && isGridView) {
-
-            view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.item_recycler_discover_grid, parent, false);
-
-        } else {
-            view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.item_recycler_discover, parent, false);
-        }
-*/
         return new DiscoverRecyclerVH(view);
     }
 
@@ -75,40 +65,39 @@ public class DiscoverRecyclerAdapter extends RecyclerView.Adapter<DiscoverRecycl
     public void onBindViewHolder(final DiscoverRecyclerVH holder, final int position) {
         Discover current = mDiscoverList.get(position);
 
-      /*  if (mode == AppConstants.MODE_ADAPTER_DISCOVER && isGridView) {
+        holder.textViewCityName.setText(current.getmCityName());
+
+        if (!isGridView) {
+            holder.textViewReview.setText(current.getmReviews());
+            holder.textViewText.setText(current.getmText());
+            holder.textViewDuration.setText(current.getmDuration());
+            holder.textViewExplore.setText("Explore " + current.getmCityName());
+
+            if (mode == AppConstants.MODE_ADAPTER_DISCOVER) {
+                holder.textViewCityName.setText(current.getmCityName());
+                holder.textViewName.setText(current.getmName());
+
+                holder.ratingBar.setRating(current.getmRating());
+
+                holder.imageButtonDel.setVisibility(View.INVISIBLE);
+                holder.imageButtonEdit.setVisibility(View.INVISIBLE);
+                holder.ratingBar.setVisibility(View.VISIBLE);
+                holder.textViewCityName.setVisibility(View.VISIBLE);
+                holder.textViewName.setVisibility(View.VISIBLE);
+                holder.imageButtonAdd.setVisibility(View.VISIBLE);
+                holder.textViewSendRequest.setVisibility(View.VISIBLE);
+            } else if (mode == AppConstants.MODE_ADAPTER_MY_POSTS) {
+
+                holder.imageButtonDel.setVisibility(View.VISIBLE);
+                holder.imageButtonEdit.setVisibility(View.VISIBLE);
+                holder.ratingBar.setVisibility(View.INVISIBLE);
+                holder.textViewCityName.setVisibility(View.INVISIBLE);
+                holder.textViewName.setVisibility(View.INVISIBLE);
+                holder.imageButtonAdd.setVisibility(View.INVISIBLE);
+                holder.textViewSendRequest.setVisibility(View.INVISIBLE);
+            }
 
         }
-
-
-        holder.textViewReview.setText(current.getmReviews());
-        holder.textViewText.setText(current.getmText());
-        holder.textViewDuration.setText(current.getmDuration());
-        holder.textViewExplore.setText("Explore " + current.getmCityName());
-        if (mode == AppConstants.MODE_ADAPTER_DISCOVER) {
-            holder.textViewCityName.setText(current.getmCityName());
-            holder.textViewName.setText(current.getmName());
-
-            holder.ratingBar.setRating(current.getmRating());
-
-            holder.imageButtonDel.setVisibility(View.INVISIBLE);
-            holder.imageButtonEdit.setVisibility(View.INVISIBLE);
-            holder.ratingBar.setVisibility(View.VISIBLE);
-            holder.textViewCityName.setVisibility(View.VISIBLE);
-            holder.textViewName.setVisibility(View.VISIBLE);
-            holder.imageButtonAdd.setVisibility(View.VISIBLE);
-            holder.textViewSendRequest.setVisibility(View.VISIBLE);
-        } else if (mode == AppConstants.MODE_ADAPTER_MY_POSTS) {
-
-            holder.imageButtonDel.setVisibility(View.VISIBLE);
-            holder.imageButtonEdit.setVisibility(View.VISIBLE);
-            holder.ratingBar.setVisibility(View.INVISIBLE);
-            holder.textViewCityName.setVisibility(View.INVISIBLE);
-            holder.textViewName.setVisibility(View.INVISIBLE);
-            holder.imageButtonAdd.setVisibility(View.INVISIBLE);
-            holder.textViewSendRequest.setVisibility(View.INVISIBLE);
-        }
-*/
-
     }
 
     @Override
@@ -145,17 +134,19 @@ public class DiscoverRecyclerAdapter extends RecyclerView.Adapter<DiscoverRecycl
          */
         public DiscoverRecyclerVH(final View itemView) {
             super(itemView);
-           /* textViewCityName = (TextView) itemView.findViewById(R.id.item_discover_tv_city);
-            textViewDuration = (TextView) itemView.findViewById(R.id.item_discover_tv_duration);
-            textViewExplore = (TextView) itemView.findViewById(R.id.item_discover_tv_expl);
-            textViewReview = (TextView) itemView.findViewById(R.id.item_discover_tv_review);
-            textViewText = (TextView) itemView.findViewById(R.id.item_discover_tv_text);
-            textViewName = (TextView) itemView.findViewById(R.id.item_discover_tv_name);
-            textViewSendRequest = (TextView) itemView.findViewById(R.id.item_discover_tv_send_req);
-            ratingBar = (RatingBar) itemView.findViewById(R.id.item_discover_rating);
-            imageButtonDel = (ImageButton) itemView.findViewById(R.id.item_discover_ib_del);
-            imageButtonEdit = (ImageButton) itemView.findViewById(R.id.item_discover_ib_edit);
-            imageButtonAdd = (ImageButton) itemView.findViewById(R.id.item_discover_ib_add);*/
+            textViewCityName = (TextView) itemView.findViewById(R.id.item_discover_tv_city);
+            if (!isGridView) {
+                textViewDuration = (TextView) itemView.findViewById(R.id.item_discover_tv_duration);
+                textViewExplore = (TextView) itemView.findViewById(R.id.item_discover_tv_expl);
+                textViewReview = (TextView) itemView.findViewById(R.id.item_discover_tv_review);
+                textViewText = (TextView) itemView.findViewById(R.id.item_discover_tv_text);
+                textViewName = (TextView) itemView.findViewById(R.id.item_discover_tv_name);
+                textViewSendRequest = (TextView) itemView.findViewById(R.id.item_discover_tv_send_req);
+                ratingBar = (RatingBar) itemView.findViewById(R.id.item_discover_rating);
+                imageButtonDel = (ImageButton) itemView.findViewById(R.id.item_discover_ib_del);
+                imageButtonEdit = (ImageButton) itemView.findViewById(R.id.item_discover_ib_edit);
+                imageButtonAdd = (ImageButton) itemView.findViewById(R.id.item_discover_ib_add);
+            }
         }
     }
 }

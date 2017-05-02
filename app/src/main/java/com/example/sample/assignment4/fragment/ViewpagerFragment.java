@@ -23,6 +23,7 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
     private TextView mTextViewToolbarTitle;
     private ViewPager mViewPager;
     private LinearLayout mLayoutSearchBar;
+    private LinearLayout mRequestHeader;
     private EditText mEditTextSearch;
 
     @Nullable
@@ -42,9 +43,13 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
     private void init(final View view) {
         mTextViewToolbarTitle = (TextView) view.findViewById(R.id.toolbar_tv_title);
         mViewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
-        mLayoutSearchBar = (LinearLayout) view.findViewById(R.id.home_viewpager_searchbar);
+        mViewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
         mEditTextSearch = (EditText) view.findViewById(R.id.search_bar_et);
+        mLayoutSearchBar = (LinearLayout) view.findViewById(R.id.home_viewpager_searchbar);
+        mRequestHeader = (LinearLayout) view.findViewById(R.id.home_viewpager_header);
+
         mViewPager.setOffscreenPageLimit(5);
+
         mViewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(final int position) {
@@ -80,6 +85,7 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
         textViewPosts.setOnClickListener(this);
         textViewReq.setOnClickListener(this);
         textViewNets.setOnClickListener(this);
+        mRequestHeader.setVisibility(View.GONE);
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -92,24 +98,31 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
                 switch (position) {
                     case 0:
                         mLayoutSearchBar.setVisibility(View.VISIBLE);
+                        mRequestHeader.setVisibility(View.GONE);
                         mEditTextSearch.setHint(getString(R.string.search_bar_hint_discover));
+
                         break;
                     case 1:
                         mLayoutSearchBar.setVisibility(View.VISIBLE);
+                        mRequestHeader.setVisibility(View.GONE);
                         mEditTextSearch.setHint(getString(R.string.search_bar_hint_map));
                         break;
                     case 2:
                         mLayoutSearchBar.setVisibility(View.VISIBLE);
+                        mRequestHeader.setVisibility(View.GONE);
                         mEditTextSearch.setHint(getString(R.string.search_bar_hint_posts));
                         break;
                     case 3:
                         mLayoutSearchBar.setVisibility(View.GONE);
+                        mRequestHeader.setVisibility(View.VISIBLE);
                         break;
                     case 4:
                         mLayoutSearchBar.setVisibility(View.GONE);
+                        mRequestHeader.setVisibility(View.GONE);
                         break;
                     default:
                         mLayoutSearchBar.setVisibility(View.GONE);
+                        mRequestHeader.setVisibility(View.GONE);
                 }
             }
 

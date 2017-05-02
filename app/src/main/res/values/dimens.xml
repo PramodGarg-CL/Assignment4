@@ -47,5 +47,6 @@
     <dimen name="square_button_width">@dimen/pill_button_width</dimen>
     <dimen name="square_button_height">34dp</dimen>
     <dimen name="seperator">1dp</dimen>
+    <dimen name="searchbar_max_height">48dp</dimen>
 
 </resources>

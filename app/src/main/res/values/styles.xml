@@ -62,8 +62,28 @@
         <item name="android:background">@drawable/shape_pill_left_rounded</item>
     </style>
 
+    <style name="RoundedLeftTextViewLight" parent="@style/RoundedTextViewPrimary">
+        <item name="android:background">@drawable/shape_pill_left_rounded_unselected</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
     <style name="RoundedRightTextView" parent="@style/RoundedTextViewPrimary">
         <item name="android:background">@drawable/shape_pill_right_rounded</item>
+    </style>
+
+    <style name="RoundedRightTextViewLight" parent="@style/RoundedTextViewPrimary">
+        <item name="android:background">@drawable/shape_pill_right_rounded_unselected</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="RectangleTextViewLight" parent="@style/RoundedTextViewPrimary">
+        <item name="android:background">@drawable/shape_rectangle_unselected</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="RectangleTextViewDark" parent="@style/RoundedTextViewPrimary">
+        <item name="android:background">@drawable/shape_rectangle</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="RoundedCornerTextView" parent="@style/RoundedTextViewPrimary">
@@ -79,6 +99,8 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
+
+
 
 
 </resources>
