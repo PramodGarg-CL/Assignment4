@@ -1,5 +1,6 @@
 package com.example.sample.assignment4.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.sample.assignment4.AppConstants;
 import com.example.sample.assignment4.R;
+import com.example.sample.assignment4.activity.MyProfileActivity;
 
 /**
  * Created by darknight on 28/4/17.
@@ -47,6 +50,14 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
         mEditTextSearch = (EditText) view.findViewById(R.id.search_bar_et);
         mLayoutSearchBar = (LinearLayout) view.findViewById(R.id.home_viewpager_searchbar);
         mRequestHeader = (LinearLayout) view.findViewById(R.id.home_viewpager_header);
+
+        ImageButton imageButton = (ImageButton) view.findViewById(R.id.search_bar_bt);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                getActivity().startActivity(new Intent(getActivity(), MyProfileActivity.class));
+            }
+        });
 
         mViewPager.setOffscreenPageLimit(5);
 

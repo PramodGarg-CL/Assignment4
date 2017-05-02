@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/item_request_iv"
+            android:layout_width="@dimen/circular_image_side_large"
+            android:layout_height="@dimen/circular_image_side_large"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_top_medium"
+            android:layout_marginTop="@dimen/margin_top_medium"
+            android:elevation="@dimen/elevation"
+            android:src="@drawable/placeholder_user"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="@dimen/circular_image_border_width" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/frag_prof_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/margin_top_medium"
+            android:layout_weight="1"
+            android:elevation="@dimen/elevation"
+            app:cardCornerRadius="@dimen/card_corner_radius">
+
+            <LinearLayout
+                android:id="@+id/frag_prof_card_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_small">
+
+                <LinearLayout
+                    android:id="@+id/my_prof_ll_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/my_prof_inc_fname"
+                        layout="@layout/material_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        android:id="@+id/my_prof_inc_lname"
+                        layout="@layout/material_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+
+                <include
+                    android:id="@+id/my_prof_inc_nickname"
+                    layout="@layout/material_edit_text" />
+
+                <include
+                    android:id="@+id/my_prof_inc_age"
+                    layout="@layout/material_edit_text" />
+
+                <include
+                    android:id="@+id/my_prof_inc_gender"
+                    layout="@layout/material_edit_text" />
+
+                <include
+                    android:id="@+id/my_prof_inc_city"
+                    layout="@layout/material_edit_text" />
+
+                <include
+                    android:id="@+id/my_prof_inc_country"
+                    layout="@layout/material_edit_text" />
+
+                <include
+                    android:id="@+id/my_prof_inc_prof"
+                    layout="@layout/material_edit_text" />
+
+                <include
+                    android:id="@+id/my_prof_inc_ref"
+                    layout="@layout/material_edit_text" />
+
+                <include
+                    android:id="@+id/my_prof_inc_interest"
+                    layout="@layout/material_edit_text" />
+
+                <include
+                    android:id="@+id/my_prof_inc_mail"
+                    layout="@layout/material_edit_text" />
+
+                <LinearLayout
+                    android:id="@+id/my_prof_ll_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/my_prof_sp_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3" />
+
+                    <include
+                        android:id="@+id/my_prof_inc_phone"
+                        layout="@layout/material_edit_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            style="@style/RoundedTextViewPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_top_medium"
+            android:paddingBottom="@dimen/padding_high"
+            android:text="@string/change_pass" />
+    </LinearLayout>
+</ScrollView>

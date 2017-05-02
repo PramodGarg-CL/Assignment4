@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_prof_linear"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/my_prof_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/my_prof_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accept"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/my_prof_et"
+            style="@style/EdiTextMyProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_prof_tv_title"
+            android:visibility="visible" />
+
+        <RadioGroup
+            android:id="@+id/my_prof_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_prof_tv_title"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/padding_very_small"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/my_prof_rb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_left_small"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/my_prof_rb_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_left_small"
+                android:text="Female" />
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/my_prof_tv_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableEnd="@drawable/phone_icon"
+        android:gravity="center"
+        android:text="Make it public"
+        android:textSize="@dimen/text_size_very_small"
+        android:textStyle="bold|italic"
+        android:visibility="gone" />
+
+
+</LinearLayout>

@@ -34,4 +34,5 @@
     <string name="dummy_data_rating">2.4</string>
     <string name="title_network">Network</string>
     <string name="dummy_data_address">1097, St. Peters Street,CA</string>
+    <string name="change_pass">Change Password</string>
 </resources>
