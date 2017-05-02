@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.sample.assignment4.utils.GridViewItem xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/grid_side_length"
-    android:background="@android:color/background_light"
-    android:orientation="vertical"
-    android:padding="@dimen/seperator">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/item_discover_iv"
@@ -41,4 +39,4 @@
 
     </RelativeLayout>
 
-</RelativeLayout>
+</com.example.sample.assignment4.utils.GridViewItem>

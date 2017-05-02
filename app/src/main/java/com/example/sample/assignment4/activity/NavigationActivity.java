@@ -110,7 +110,7 @@ public class NavigationActivity extends AppCompatActivity {
         /**
          * abstract method
          *
-         * @param isGridViewEnabled : true for grid, false for linear
+         * @param isGridViewEnabled : true for item_recycler_discover_grid, false for linear
          */
         void onRecyclerLayoutChange(boolean isGridViewEnabled);
     }

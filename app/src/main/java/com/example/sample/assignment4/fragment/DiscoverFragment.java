@@ -17,6 +17,7 @@ import com.example.sample.assignment4.R;
 import com.example.sample.assignment4.activity.NavigationActivity;
 import com.example.sample.assignment4.adapter.DiscoverRecyclerAdapter;
 import com.example.sample.assignment4.model.Discover;
+import com.example.sample.assignment4.utils.GridSpacingItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +55,8 @@ public class DiscoverFragment extends BaseFragment implements NavigationActivity
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mDiscoverRecyclerAdapter = new DiscoverRecyclerAdapter(getData(), mode);
         mRecyclerView.setAdapter(mDiscoverRecyclerAdapter);
+        int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.grid_layout_margin);
+        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(3, spacingInPixels, true, 0));
         mRecyclerView.requestFocus();
     }
 
@@ -66,6 +69,24 @@ public class DiscoverFragment extends BaseFragment implements NavigationActivity
         List<Discover> discoverList = new ArrayList<>();
         if (mode == AppConstants.MODE_ADAPTER_DISCOVER) {
             Toast.makeText(getActivity(), "if", Toast.LENGTH_SHORT).show();
+            discoverList.add(new Discover(getString(R.string.dummy_data_city_name),
+                    getString(R.string.dummy_data_name),
+                    getString(R.string.dummy_data_duration),
+                    getString(R.string.dummy_data_review),
+                    getString(R.string.dummy_data_text),
+                    Float.parseFloat(getString(R.string.dummy_data_rating))));
+            discoverList.add(new Discover(getString(R.string.dummy_data_city_name),
+                    getString(R.string.dummy_data_name),
+                    getString(R.string.dummy_data_duration),
+                    getString(R.string.dummy_data_review),
+                    getString(R.string.dummy_data_text),
+                    Float.parseFloat(getString(R.string.dummy_data_rating))));
+            discoverList.add(new Discover(getString(R.string.dummy_data_city_name),
+                    getString(R.string.dummy_data_name),
+                    getString(R.string.dummy_data_duration),
+                    getString(R.string.dummy_data_review),
+                    getString(R.string.dummy_data_text),
+                    Float.parseFloat(getString(R.string.dummy_data_rating))));
             discoverList.add(new Discover(getString(R.string.dummy_data_city_name),
                     getString(R.string.dummy_data_name),
                     getString(R.string.dummy_data_duration),

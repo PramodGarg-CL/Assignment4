@@ -3,7 +3,6 @@ package com.example.sample.assignment4.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,13 +45,13 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback {
         }
     }
 
-    @Override
+  /*  @Override
     public void onDestroyView() {
         super.onDestroyView();
         Fragment fragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment_map);
         FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
         fragmentTransaction.remove(fragment);
         fragmentTransaction.commit();
-    }
+    }*/
 
 }
