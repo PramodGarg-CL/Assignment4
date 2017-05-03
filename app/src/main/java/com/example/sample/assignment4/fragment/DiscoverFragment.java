@@ -17,7 +17,7 @@ import com.example.sample.assignment4.R;
 import com.example.sample.assignment4.activity.NavigationActivity;
 import com.example.sample.assignment4.adapter.DiscoverRecyclerAdapter;
 import com.example.sample.assignment4.model.Discover;
-import com.example.sample.assignment4.utils.GridSpacingItemDecoration;
+import com.example.sample.assignment4.util.GridSpacingItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +27,8 @@ import java.util.List;
  */
 
 public class DiscoverFragment extends BaseFragment implements NavigationActivity.OnRecyclerLayoutChange {
-    private RecyclerView mRecyclerView;
-    private ImageButton mImageButtonChangeLayout;
+    private RecyclerView recyclerView;
+    private ImageButton imageButtonChangeLayout;
     private int mode;
     private boolean isGridView = false;
     private DiscoverRecyclerAdapter mDiscoverRecyclerAdapter;
@@ -50,14 +50,14 @@ public class DiscoverFragment extends BaseFragment implements NavigationActivity
     private void init(final View view) {
         mode = getArguments().getInt("mode");
         Log.d("DiscoverFragment", "init: " + mode);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
-        mImageButtonChangeLayout = (ImageButton) view.findViewById(R.id.toolbar_ib_grid);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
+        imageButtonChangeLayout = (ImageButton) view.findViewById(R.id.toolbar_ib_grid);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mDiscoverRecyclerAdapter = new DiscoverRecyclerAdapter(getData(), mode);
-        mRecyclerView.setAdapter(mDiscoverRecyclerAdapter);
+        recyclerView.setAdapter(mDiscoverRecyclerAdapter);
         int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.grid_layout_margin);
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(3, spacingInPixels, true, 0));
-        mRecyclerView.requestFocus();
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(3, spacingInPixels, true, 0));
+        recyclerView.requestFocus();
     }
 
     /**
@@ -136,9 +136,9 @@ public class DiscoverFragment extends BaseFragment implements NavigationActivity
     @Override
     public void onRecyclerLayoutChange(final boolean isGridViewEnabled) {
         if (isGridViewEnabled) {
-            mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+            recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         } else {
-            mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         }
         mDiscoverRecyclerAdapter.setGridView(isGridViewEnabled);

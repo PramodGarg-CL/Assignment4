@@ -1,4 +1,4 @@
-package com.example.sample.assignment4.utils;
+package com.example.sample.assignment4.util;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

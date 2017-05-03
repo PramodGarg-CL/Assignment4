@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/margin_top_small"
+    android:layout_marginBottom="@dimen/margin_small"
     android:background="@android:color/white"
     android:orientation="vertical">
 
@@ -67,7 +67,7 @@
             android:id="@+id/item_discover_ib_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_left_small"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:layout_toStartOf="@+id/item_discover_ib_del"
             android:background="@drawable/edit_icon" />
     </RelativeLayout>
@@ -77,14 +77,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/item_discover_iv"
-        android:layout_marginEnd="@dimen/margin_left_small"
-        android:layout_marginStart="@dimen/margin_left_small">
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_medium">
 
         <ImageButton
             android:id="@+id/item_discover_ib_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top_small"
+            android:layout_marginTop="@dimen/margin_small"
             android:background="@drawable/add_image_icon" />
 
         <TextView
@@ -92,7 +92,7 @@
             style="@style/TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_left_very_small"
+            android:layout_marginStart="@dimen/margin_small"
             android:layout_toEndOf="@+id/item_discover_ib_add"
             android:text="@string/dummy_data_name" />
 
@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="@dimen/margin_left_very_small"
+            android:layout_marginEnd="@dimen/margin_small"
             android:drawableStart="@drawable/reviews"
             android:text="@string/dummy_data_review" />
 
@@ -122,7 +122,7 @@
             style="@style/TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/margin_left_very_small"
+            android:layout_marginRight="@dimen/margin_small"
             android:layout_toStartOf="@+id/item_discover_tv_review"
             android:drawableStart="@drawable/time_1"
             android:text="@string/dummy_data_duration" />
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@id/item_discover_ib_add"
-            android:layout_marginTop="@dimen/margin_top_very_small"
+            android:layout_marginTop="@dimen/margin_very_small"
             android:text="@string/dummy_data_text" />
 
     </RelativeLayout>
@@ -146,8 +146,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/item_discover_rl_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="@dimen/margin_top_medium"
-        android:layout_marginEnd="@dimen/margin_left_small"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
         android:text="@string/send_request" />
 
 

@@ -14,18 +14,17 @@
 
     <dimen name="grid_side_length">120dp</dimen>
     <dimen name="zero_dimen">0dp</dimen>
+    <!-- Margins-->
 
-    <dimen name="margin_left_very_small">8dp</dimen>
-    <dimen name="margin_left_small">16dp</dimen>
-    <dimen name="margin_left_medium">24dp</dimen>
-    <dimen name="margin_left_large">32dp</dimen>
-    <dimen name="margin_top_very_small">4dp</dimen>
-    <dimen name="margin_top_small">8dp</dimen>
-    <dimen name="margin_top_medium">16dp</dimen>
-    <dimen name="margin_top_large">32dp</dimen>
-    <dimen name="margin_top_xtra_large">60dp</dimen>
+    <dimen name="margin_very_small">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_very_large">32dp</dimen>
+    <dimen name="margin_xtra_large">60dp</dimen>
     <dimen name="margin_bet_lay">28dp</dimen>
 
+    <!-- Padding-->
     <dimen name="padding_very_small">4dp</dimen>
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_medium">16dp</dimen>

@@ -35,7 +35,7 @@
         android:fitsSystemWindows="true">
 
         <include
-            layout="@layout/content_main_nav"
+            layout="@layout/content_activity_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </android.support.design.widget.NavigationView>

@@ -1,4 +1,4 @@
-package com.example.sample.assignment4.utils;
+package com.example.sample.assignment4.util;
 
 import android.content.Context;
 import android.graphics.Canvas;

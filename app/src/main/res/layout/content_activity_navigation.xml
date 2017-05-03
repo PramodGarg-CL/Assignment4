@@ -7,21 +7,21 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_top_large"
+        android:layout_height="@dimen/margin_very_large"
         android:background="@color/colorPrimary" />
 
     <include
-        layout="@layout/nav_header"
+        layout="@layout/navigation_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />`
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_top_large"
+        android:layout_height="@dimen/margin_very_large"
         android:background="@color/background_light" />
 
     <include
-        layout="@layout/list_main_nav"
+        layout="@layout/menu_activity_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />`
 

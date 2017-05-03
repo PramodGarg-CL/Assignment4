@@ -20,7 +20,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_xtra_large"
+        android:layout_marginTop="@dimen/margin_xtra_large"
         android:background="@color/background_light">
 
         <TextView
@@ -28,7 +28,7 @@
             style="@style/TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top_xtra_large"
+            android:layout_marginTop="@dimen/margin_xtra_large"
             android:text="@string/dummy_data_name"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_large" />

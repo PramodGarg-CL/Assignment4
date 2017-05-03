@@ -23,9 +23,9 @@ import static com.example.sample.assignment4.AppConstants.TAG_VIEWPAGER;
  */
 
 public class NavigationActivity extends AppCompatActivity {
-    private ImageButton mImageViewToolbar;
-    private DrawerLayout mDrawerLayout;
-    private TextView mTextViewToolbarTitle;
+    private ImageButton imageViewToolbar;
+    private DrawerLayout drawerLayout;
+    private TextView textViewToolbarTitle;
     private ImageButton imageButtonGrid;
     private ImageButton imageButtonList;
 
@@ -40,16 +40,16 @@ public class NavigationActivity extends AppCompatActivity {
      * Intializes variables and views
      */
     private void init() {
-        mImageViewToolbar = (ImageButton) findViewById(R.id.toolbar_ib_home);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.home_drawer_layout);
-        mTextViewToolbarTitle = (TextView) findViewById(R.id.toolbar_tv_title);
+        imageViewToolbar = (ImageButton) findViewById(R.id.toolbar_ib_home);
+        drawerLayout = (DrawerLayout) findViewById(R.id.home_drawer_layout);
+        textViewToolbarTitle = (TextView) findViewById(R.id.toolbar_tv_title);
         imageButtonGrid = (ImageButton) findViewById(R.id.toolbar_ib_grid);
         imageButtonList = (ImageButton) findViewById(R.id.toolbar_ib_list);
 
-        mImageViewToolbar.setOnClickListener(new View.OnClickListener() {
+        imageViewToolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                mDrawerLayout.openDrawer(GravityCompat.START);
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
         setToolbarTitle(getString(R.string.title_discover));
@@ -99,7 +99,7 @@ public class NavigationActivity extends AppCompatActivity {
      * @param title String title for the title
      */
     private void setToolbarTitle(final String title) {
-        mTextViewToolbarTitle.setText(title);
+        textViewToolbarTitle.setText(title);
     }
 
     /**

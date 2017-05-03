@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:id="@+id/search_bar_bt"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_left_small"
+        android:layout_marginLeft="@dimen/margin_medium"
         android:background="@drawable/info_icon" />
 
 </LinearLayout>

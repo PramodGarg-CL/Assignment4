@@ -23,11 +23,11 @@ import com.example.sample.assignment4.activity.MyProfileActivity;
  */
 
 public class ViewpagerFragment extends BaseFragment implements View.OnClickListener {
-    private TextView mTextViewToolbarTitle;
-    private ViewPager mViewPager;
-    private LinearLayout mLayoutSearchBar;
-    private LinearLayout mRequestHeader;
-    private EditText mEditTextSearch;
+    private TextView textViewToolbarTitle;
+    private ViewPager viewPager;
+    private LinearLayout layoutSearchBar;
+    private LinearLayout requestHeader;
+    private EditText editTextSearch;
 
     @Nullable
     @Override
@@ -44,12 +44,12 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
      * @param view : view returned
      */
     private void init(final View view) {
-        mTextViewToolbarTitle = (TextView) view.findViewById(R.id.toolbar_tv_title);
-        mViewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
-        mViewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
-        mEditTextSearch = (EditText) view.findViewById(R.id.search_bar_et);
-        mLayoutSearchBar = (LinearLayout) view.findViewById(R.id.home_viewpager_searchbar);
-        mRequestHeader = (LinearLayout) view.findViewById(R.id.home_viewpager_header);
+        textViewToolbarTitle = (TextView) view.findViewById(R.id.toolbar_tv_title);
+        viewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
+        viewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
+        editTextSearch = (EditText) view.findViewById(R.id.search_bar_et);
+        layoutSearchBar = (LinearLayout) view.findViewById(R.id.home_viewpager_searchbar);
+        requestHeader = (LinearLayout) view.findViewById(R.id.home_viewpager_header);
 
         ImageButton imageButton = (ImageButton) view.findViewById(R.id.search_bar_bt);
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -59,9 +59,9 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
             }
         });
 
-        mViewPager.setOffscreenPageLimit(5);
+        viewPager.setOffscreenPageLimit(5);
 
-        mViewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
+        viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(final int position) {
                 switch (position) {
@@ -96,9 +96,9 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
         textViewPosts.setOnClickListener(this);
         textViewReq.setOnClickListener(this);
         textViewNets.setOnClickListener(this);
-        mRequestHeader.setVisibility(View.GONE);
+        requestHeader.setVisibility(View.GONE);
 
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
 
@@ -108,32 +108,32 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
             public void onPageSelected(final int position) {
                 switch (position) {
                     case 0:
-                        mLayoutSearchBar.setVisibility(View.VISIBLE);
-                        mRequestHeader.setVisibility(View.GONE);
-                        mEditTextSearch.setHint(getString(R.string.search_bar_hint_discover));
+                        layoutSearchBar.setVisibility(View.VISIBLE);
+                        requestHeader.setVisibility(View.GONE);
+                        editTextSearch.setHint(getString(R.string.search_bar_hint_discover));
 
                         break;
                     case 1:
-                        mLayoutSearchBar.setVisibility(View.VISIBLE);
-                        mRequestHeader.setVisibility(View.GONE);
-                        mEditTextSearch.setHint(getString(R.string.search_bar_hint_map));
+                        layoutSearchBar.setVisibility(View.VISIBLE);
+                        requestHeader.setVisibility(View.GONE);
+                        editTextSearch.setHint(getString(R.string.search_bar_hint_map));
                         break;
                     case 2:
-                        mLayoutSearchBar.setVisibility(View.VISIBLE);
-                        mRequestHeader.setVisibility(View.GONE);
-                        mEditTextSearch.setHint(getString(R.string.search_bar_hint_posts));
+                        layoutSearchBar.setVisibility(View.VISIBLE);
+                        requestHeader.setVisibility(View.GONE);
+                        editTextSearch.setHint(getString(R.string.search_bar_hint_posts));
                         break;
                     case 3:
-                        mLayoutSearchBar.setVisibility(View.GONE);
-                        mRequestHeader.setVisibility(View.VISIBLE);
+                        layoutSearchBar.setVisibility(View.GONE);
+                        requestHeader.setVisibility(View.VISIBLE);
                         break;
                     case 4:
-                        mLayoutSearchBar.setVisibility(View.GONE);
-                        mRequestHeader.setVisibility(View.GONE);
+                        layoutSearchBar.setVisibility(View.GONE);
+                        requestHeader.setVisibility(View.GONE);
                         break;
                     default:
-                        mLayoutSearchBar.setVisibility(View.GONE);
-                        mRequestHeader.setVisibility(View.GONE);
+                        layoutSearchBar.setVisibility(View.GONE);
+                        requestHeader.setVisibility(View.GONE);
                 }
             }
 
@@ -151,7 +151,7 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
      * @param title String title for the title
      */
     private void setToolbarStitle(final String title) {
-        mTextViewToolbarTitle.setText(title);
+        textViewToolbarTitle.setText(title);
     }
 
     @Override
@@ -189,15 +189,15 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
      */
 
     private void changeFragment(final int position) {
-        mViewPager.setCurrentItem(position);
+        viewPager.setCurrentItem(position);
     }
 
     /**
      * Return the reference of viewpager
      *
-     * @return mViewPager
+     * @return viewPager
      */
     public ViewPager getViewPager() {
-        return mViewPager;
+        return viewPager;
     }
 }

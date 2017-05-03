@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 public class RequestsFragment extends BaseFragment {
-    private RecyclerView mRecyclerView;
+    private RecyclerView recyclerView;
 
     @Nullable
     @Override
@@ -66,8 +66,8 @@ public class RequestsFragment extends BaseFragment {
      * @param view : view returned
      */
     private void init(final View view) {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(new RequestRecyclerAdapter(getData()));
+        recyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(new RequestRecyclerAdapter(getData()));
     }
 }

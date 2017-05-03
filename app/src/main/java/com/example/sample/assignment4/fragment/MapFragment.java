@@ -17,7 +17,7 @@ import com.google.android.gms.maps.SupportMapFragment;
  */
 
 public class MapFragment extends BaseFragment implements OnMapReadyCallback {
-    private GoogleMap mMap;
+    private GoogleMap map;
 
     @Nullable
     @Override
@@ -41,7 +41,7 @@ public class MapFragment extends BaseFragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(final GoogleMap googleMap) {
         if (googleMap != null) {
-            mMap = googleMap;
+            map = googleMap;
         }
     }
 
