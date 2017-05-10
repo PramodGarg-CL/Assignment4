@@ -46,7 +46,6 @@ public class ViewpagerFragment extends BaseFragment implements View.OnClickListe
     private void init(final View view) {
         textViewToolbarTitle = (TextView) view.findViewById(R.id.toolbar_tv_title);
         viewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
-        viewPager = (ViewPager) view.findViewById(R.id.home_viewpager);
         editTextSearch = (EditText) view.findViewById(R.id.search_bar_et);
         layoutSearchBar = (LinearLayout) view.findViewById(R.id.home_viewpager_searchbar);
         requestHeader = (LinearLayout) view.findViewById(R.id.home_viewpager_header);
